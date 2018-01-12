@@ -5,6 +5,9 @@
 # as root
 https://kx.cloudingenium.com/linux/ubuntu/build-version-nginx/
 ```
+apt list --installed
+dpkg -l
+
 apt-get install libpcre3 libpcre3-dev
 apt-get install zlib1g-dev
 apt-get install openssl
