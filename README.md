@@ -138,4 +138,26 @@ stream {
 ```
 
 
+# NAT
+
+```
+sysctl -a | grep forward
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+
+sudo vi /etc/sysctl.conf
+
+#uncomment this line
+net.ipv4.ip_forward=1
+
+sysctl -p
+
+# eth0 -> eth1
+iptables -A FORWARD —in-interface eth0 -j AcCEPT
+iptables -t nat -A POSTROUTING —out-interface eth1 -j MASQUERADE
+
+# eth1 -> eth0
+iptables -A FORWARD —in-interface eth1 -j AcCEPT
+iptables -t nat -A POSTROUTING —out-interface eth0 -j MASQUERADE
+```
+
 
