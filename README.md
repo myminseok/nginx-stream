@@ -1,5 +1,5 @@
 # nginx with tcp stream
-tested on ubuntu 14.04, nginx 1.9
+tested on ubuntu 14.04, 18.04 with nginx 1.9
 
 ### 1. (as root) install dependencies
 https://kx.cloudingenium.com/linux/ubuntu/build-version-nginx/
