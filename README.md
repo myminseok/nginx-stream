@@ -1,6 +1,22 @@
-# nginx with tcp stream
-tested on ubuntu 14.04, 18.04 with nginx 1.9
+# Nginx with tcp stream
+- Tested on ubuntu 14.04, 18.04 with nginx 1.9. 
+- there is ready compiled binary [here](https://github.com/myminseok/nginx-stream/tree/master/)
 
+## Install from binary
+for ubuntu 18.04 vm, you can simply run following [script](https://github.com/myminseok/nginx-stream/blob/master/ubuntu18/setup.sh)
+
+```
+mkdir -p /etc/nginx
+cp ./etc/nginx/nginx.conf /etc/nginx/
+cp ./lib/systemd/system/nginx.service /lib/systemd/system/
+cp ./usr/sbin/nginx /usr/sbin/
+mkdir -p /var/log/nginx
+systemctl daemon-reload
+systemctl restart nginx
+systemctl status nginx
+```
+
+## Install by compiling
 ### 1. (as root) install dependencies
 https://kx.cloudingenium.com/linux/ubuntu/build-version-nginx/
 ```
